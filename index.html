@@ -1,0 +1,58 @@
+<html>
+    <head>
+
+        <title>
+            Projetos
+        </title>
+        <link rel="stylesheet" type="text/css"  href="style.css"/>
+    </head>
+        <body>
+            
+            <script>
+                function myFunction() {
+                  var input, filter, table, tr, td, i, txtValue;
+                  input = document.getElementById("myInput");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("myTable");
+                  tr = table.getElementsByTagName("tr");
+                  
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+                </script>
+
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Pesquisar Projetos ...">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Projeto</th>
+    <th style="width:40%;">ID</th>
+  </tr>
+  <tr>
+    <td>Projeto 1</td>
+    <td>10000</td>
+  </tr>
+  <tr>
+    <td>Projeto 2</td>
+    <td>10001</td>
+  </tr>
+  <tr>
+    <td>Projeto 3</td>
+    <td>10002</td>
+  </tr>
+  <tr>
+    <td>Projeto 4</td>
+    <td>10003</td>
+  </tr>
+</table>
+        </body>
+</html>

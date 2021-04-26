@@ -17,27 +17,6 @@
       <th style="width:40%;">ID</th>
     </tr>
   </table>
-  <script>
-    const table = document.querySelector('table');
-    let projects = [];
-    function populate(response) {
-      console.log(response)
-      projects = response.projects.map(project => {
-        const tr = document.createElement('tr');
-        const tdId = document.createElement('td');
-        const tdProject = document.createElement('td');
-        tdId.innerHTML = project.id;
-        tdProject.innerHTML = project.name;
-        tr.append(tdProject,tdId);
-        return tr
-      })
-      table.append(...projects)
-    }
-    const myRequest = new Request('http://localhost:3000');
-    fetch(myRequest)
-      .then(response => response.json())
-      .then(projects => populate(projects));
-  </script>
+  <script src="main.js"> </script>
 </body>
-
 </html>
